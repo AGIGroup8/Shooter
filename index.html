@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shooter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/code.js" type="text/javascript" defer></script>
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Raleway", sans-serif
+    }
+
+    body,
+    html {
+      /* height: 100%; */
+      line-height: 1.8;
+    }
+
+    /* Full height image header */
+    .bgimg-1 {
+      background-position: left;
+      background-image: url("img/media/banner_small.png");
+      background-size: cover;
+      width: auto;
+      height: 600px;
+    }
+
+    .w3-bar .w3-button {
+      padding: 16px;
+    }
+
+    #to-the-top-button {
+      border-radius: 3%;
+      background-color: rgb(135, 84, 45);
+	  
+	  position: fixed;
+	  right: 30px;
+	  bottom: 20px;
+	  z-index: 99;
+	  
+      /* #margin-top: 50px; */
+      opacity: 80%;
+    }
+	
+	#button {
+      border-radius: 3%;
+      background-color: rgb(135, 84, 45);
+      margin-top: 50px;
+      opacity: 80%;
+    }
+
+    .padding {
+      padding-top: 50px;
+    }
+
+    .background-img {
+      background-image: url("img/media/magic.png");
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: 300px 300px;
+    }
+
+    /* Fix the hamburger icon */
+    .w3-top {
+      position: sticky;
+    }
+
+    /* For mobile version of the banner image */
+    @media screen and (min-width: 700px) and (max-width: 930px) {
+      .bgimg-1 {
+        height: 450px;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      .bgimg-1 {
+        background-image: url(img/media/banner_onlyText.jpg);
+        height: 90vw;
+      }
+
+      .mobile-center {
+        margin: auto;
+        text-align: center;
+        left: 5%;
+        right: 5%;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .mobile-center {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-black w3-card" id="myNavbar">
+      <a href="#home" class="w3-bar-item w3-button w3-wide">HOME</a>
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+        <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+        <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> MEDIA</a>
+        <a href="#credit" class="w3-bar-item w3-button"><i class="fa fa-th"></i> CREDITS</a>
+      </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+        onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large"
+    style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+    <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">MEDIA</a>
+    <a href="#credit" onclick="w3_close()" class="w3-bar-item w3-button">CREDITS</a>
+  </nav>
+
+  <!-- Header with full-height image -->
+  <div class="w3-display-container w3-black bgimg-1" id="home">
+    <div class="w3-display-left w3-text-white mobile-center" style="padding:48px">
+      <span class="w3-jumbo w3-hide-small"></span><br>
+      <span class="w3-xxlarge w3-hide-large w3-hide-medium"></span><br>
+      <span class="w3-large"></span>
+      <p><a href="#about" id="button"
+          class="w3-button w3-padding-large w3-large w3-margin-top w3-hover-opacity-off">Learn
+          more</a></p>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-container w3-black" style="padding:128px 16px" id="about">
+    <h2 class="w3-center">ABOUT THE GAME</h2>
+    <div class="w3-row-padding w3-large padding">
+      <div class="w3-col m6">
+        <h3 class="w3-center">What is Light In The Dark?</h3>
+        <p>
+          Light In The Dark is an advanced graphics and interaction project for the course DH2413 at KTH during the
+          autumn of 2022. At its core, the game is a competitive survival experience in which one player is trying to
+          stay alive for as long as possible while the other player tries to kill them as fast as possible. The gameplay
+          experience of the two players is highly asymmetrical, as the player trying to stay alive is looking and
+          interacting with a scene through a virtual reality (VR) headset while the second player is directly
+          influencing and placing enemies into that scene by using a monitor and mouse. The scene used for the VR view
+          of the game is set in a dark underground arena and features highly detailed textures and modeling for the
+          surrounding environment. There are three different types of enemies, each of which has been modeled, textured
+          and scripted by the group. Additionally, the VR scene features advanced particle systems for fire and
+          electricity. The fire effects are used for a flaming sword used by the player as well as a chargeable fireball
+          while the electricity particles are used to emulate a chaotic electrical ray. As the VR player is fighting for
+          their life, the second player interacts with the scene through a custom networking implementation, allowing
+          the actions of the second player to directly impact the VR experience.
+        </p>
+      </div>
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="img/media/hardwork.jpg" alt="Hard work infront of a computer"
+          width="700" height="394">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-large padding">
+      <div class="w3-col m6">
+
+        <h3 class="w3-center">Asymmetrical gameplay</h3>
+        <p>
+          Featuring two very distinct gameplay experiences, two players interact and compete against each other, one
+          through an action packed hectic perspective with a VR headset and the other through a calculating and
+          strategic perspective, interacting through a monitor and mouse.
+        </p>
+        <img class="w3-image w3-round-large padding" src="img/media/pic of battle.png"
+          alt="A picture showing the VR view and Summoner view side by side" width="1050" height="591">
+        <h3 class="w3-center padding">Lighting the dark</h3>
+        <p>
+          When setting out on the project, one of the main motivations of the group was to experiment with high fidelity
+          lightning. This also is the reason for the setting for the game being a dark mine, as the darkness emphasizes
+          and truly brings out the light and particle effects in the scene.
+        </p>
+        <h3 class="w3-center padding">Challenges</h3>
+        <p>
+          Working on the project has presented several challenges and challenges to the group. At the start of the
+          project, none of the group members had any experience working with VR, high fidelity particle systems and
+          advanced audio. In order to overcome these challenges, the group split up the roles to the members early, and
+          made sure to have each member be responsible for a set of distinct features/areas using a continually updated
+          trello board. For further communication, the group used discord and lastly, google drive was used for file
+          sharing and documentation.
+        </p>
+      </div>
+
+      <div class="w3-col m6">
+
+        <h3 class="w3-center">Obstacles</h3>
+        <p>
+          During the project, the group also ran into a number of obstacles. Mainly these issues arose in relation to
+          optimization, as the group often strived to achieve realistic-looking graphics, the performance of the game
+          would sometimes take a hit. One example of an area in which we encountered this was in relation to lighting in
+          the Unity Universal Render Pipeline, where the graphics renderer would automatically stop rendering light
+          sources when the number of light sources in the scene became too high (We later solved this by switching to
+          the ultimate quality preset in the URP and increasing the max limit).
+          <br><br>
+          Throughout the project, we also had occasional issues with networking.
+          The asynchronous nature of the two clients made it hard to use already existing network solutions such as
+          Unity Netcode for GameObjects. Because of this we designed and implemented our own network protocol for the
+          game,
+          which we had to revise multiple times to reduce the amount of sent data as the throughput would be too high,
+          overwhelming both clients and making them drop packages. The inherent asynchronous nature of networking also
+          caused minor issues, as both clients had to be synched to both each other, but also their respective
+          networking
+          thread, causing bugs stemming from race conditions between the game logic thread and networking thread.
+          Towards the end of the project, the network issues were largely resolved, but we still had occasional
+          connection
+          issues, and both users needed to restart the game to restart. The electrical arc ray also held its share of
+          issues.
+          Mainly these issues related to making it so the electric arc would behave realistically, chain between enemies
+          as
+          well as spawning smaller “child arcs” from the main arcs, without causing too much of a performance hit.
+          <br><br>
+          Another, more wide range obstacle which remained in the game, is that it isn't currently playable in single
+          player form (not counting just gawking at the graphics in the VR headset). At one point in the project, the
+          group had plans on making the enemies spawn from set monster spawners which would generate monsters over time,
+          as opposed to having the non-vr player actively summon them. By implementing this, the idea would be that the
+          game could potentially be played by either one or two players but we never had enough time to implement this,
+          as we prioritized fixing the features we already had.
+        </p>
+      </div>
+    </div>
+
+
+
+    <div class="w3-row-padding w3-large padding">
+      <div class="w3-col m6">
+        <h3 class="w3-center">Tools and platforms</h3>
+        <p>
+          Throughout the project, the centerpiece platform used for development was the Unity game engine, in which all
+          the game logic, scripting, particle system creation, lighting and overall scenes were assembled. The choice of
+          using Unity was made on the basis of multiple members of the group having prior experience working with it,
+          creating a solid foundation for moving directly unto starting work on the VR implementation and other more
+          advanced topics. Other than Unity, Maya, Zbrush and Blender were used for modeling the enemies and the arena,
+          and the texturing was done in Adobe Substance 3D Painter and. For these tools, the motivation for using them
+          was also made on the basis of previous experience of the group members. For the audio, SteamAudio was used for
+          rendering, as it seemed to give the best results when comparing it to other high fidelity audio options, and
+          worked nicely along the HTC Vive VR headset used (which already uses steamVr).
+        </p>
+      </div>
+      <div class="w3-col m6">
+        <h3 class="w3-center">Lesson Learned</h3>
+        <p>
+          Combining different works will take time. You will also meet many bugs in this process. Thus it's good to have
+          enough time for merging.
+          <br>
+          It's good to have a nice structure in the project before all files start to get very messy.
+          <br>
+          It's good to think of the performance when you are creating your objects and not creating more details than
+          necessary.
+          <br>
+          The view with the VR headset is really different from the desktop view. Thus when you are doing graphic
+          programming on VR it's important to also test it on the VR headset.
+          <br>
+          Audio is additive, and so great care must be taken to adjust for multiple simultaneous sound sources to create
+          a
+          meaningful experience.
+        </p>
+      </div>
+    </div>
+    <div class="w3-row-padding w3-large padding">
+      <div class="w3-col m6">
+        <h3 class="w3-center">Related Work</h3>
+        <p>
+          Gawron, M., & Boryczka, U. (2018). Heterogeneous fog generated with the effect of light scattering and blur.
+          Journal of Applied Computer Science, 26(2), 31-43. <br>
+          Cao, C., Ren, Z., Schissler, C., Manocha, D., & Zhou, K. (2016). Interactive sound propagation with
+          bidirectional path tracing. ACM Transactions on Graphics (TOG), 35(6), 1-11. <br>
+          Lee, D. F., Huang, X. W., Chen, Y. C., Hsu, Y. X., Chang, S. Y., & Han, P. H. (2020). FoodBender: Activating
+          Utensil for Playing in the Immersive Game with Attachable Haptic. In SIGGRAPH Asia 2020 XR (pp. 1-2).
+        </p>
+      </div>
+
+
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="img/media/sword.png" alt="Hard work infront of a computer">
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Team Section -->
+  <div class="w3-container w3-black" style="padding:1px 16px" id="team">
+    <h2 class="w3-center">THE TEAM</h2>
+    <p class="w3-center w3-large">The ones who made the game</p>
+    <div class="w3-row-padding" style="margin-top:64px">
+      <div class="w3-col l4 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="img/profile/a.png" alt="Alexander Danielsson" style="width:100%">
+          <div class="w3-container">
+            <h3>Alexander Danielsson</h3>
+            <p class="w3-opacity">Sound & 2nd Player Experience Director</p>
+            <a id="AEmail" href=""></a>
+            <p>Implemented the game logic for the non-vr player and designed and implemented the network protocol
+              connecting the two clients together. Set up the project to use 3D sounds and spatialization using
+              the Steam Audio unity plugin, and configured the plugin to create a smooth and high fidelity auditory
+              experience. Selected and tweaked individual sound effects, as well as their 3D sound properties, and set
+              up
+              the audio geometry of the scenes. Implemented the game logic to spawn sound effects.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="img/profile/e.png" alt="Elisabeth Chen" style="width:100%">
+          <div class="w3-container">
+            <h3>Elisabeth Chen</h3>
+            <p class="w3-opacity">Fire Implementation Specialist</p>
+            <a id="EEmail" href=""></a>
+            <p>Implemented the fire graphics (used for e.g. fire sword, fireball, explosions, etc. ) and created the
+              fire sword. Also implemented the UI for the death scene and added some 3D sounds e.g. for fireball,
+              explosion and background sound.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="img/profile/j.png" alt="Jacob Brännström" style="width:100%">
+          <div class="w3-container">
+            <h3>Jacob Brännström</h3>
+            <p class="w3-opacity">AI and Enemy Gameplay Director & (sadly enough) Web Designer</p>
+            <a id="JEmail" href=""></a>
+            <p>Implemented and created the whole gameplay system for the enemies. Also implemeted boid behaviour for the
+              bats and extended their behaviour and optimizing the basic algorithm. It was also he who balanced the
+              game, so blame him if it is too hard. Was also forced to make this website.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div class="w3-row-padding" style="margin-top:64px">
+      <div class="w3-col l4 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="img/profile/m.png" alt="Marcus Holmberg" style="width:100%">
+          <div class="w3-container">
+            <h3>Marcus Holmberg</h3>
+            <p class="w3-opacity">Spell Director (and forced Jacob to Web Design)</p>
+            <a id="MEmail" href=""></a>
+            <p> Responsible for the VR interaction input from the controllers used for the spells as well as the spell
+              logic
+              (scripting for each spell) and the underlying player mana system. Created the particle effects and
+              graphics for
+              the lightning spell and some smaller script-based parts of the fireball graphics, such as the size
+              depending on
+              its level of charge. Also did much of the underlying game logic such as pausing & restarting the game.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="img/profile/r.png" alt="Ryan Ren" style="width:100%">
+          <div class="w3-container">
+            <h3>Ryan Ren</h3>
+            <p class="w3-opacity">Enemy Designer & Tablet UI Designer & Model Rigging Director</p>
+            <a id="REmail" href=""></a>
+            <p>Responsible for all enemy designs which include concepts、 sketches 、modeling and animation. Joint the VR
+              player with the virtual body in-game and develop the rigging animation function. Design the tablet
+              gameplay mechanics and User interface for the summoner player.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="img/profile/s.png" alt="Simon Blom" style="width:100%">
+          <div class="w3-container">
+            <h3>Simon Blom</h3>
+            <p class="w3-opacity">Artist & Level Director & Rendering Director</p>
+            <a id="SEmail" href=""></a>
+            <p>Designed and created the game level together with the game level objects. He used Zbrush to sculpt
+              rock surfaces, Maya to model different objects and Substance Painter to create high quality
+              textures. Also took the overall graphics to the next level by adding anti-aliasing and real-time
+              shadows for the rendering.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Work Section -->
+  <div class="w3-container w3-black" style="padding:128px 16px" id="work">
+    <h2 class="w3-center">MEDIA</h2>
+    <p class="w3-center w3-large">Proof that we actually did this. It is not photoshop.</p>
+
+    <div class="w3-row-padding">
+      <div class="w3-col l3 m6">
+        <img src="img/media/childSoldier.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="A child defending themselves from the vile creatures being summoned by the summoner.">
+      </div>
+      <div class="w3-col l3 m6">
+        <img src="img/media/childSummoner.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="A child summoning vile creatures for the VR player to defend against.">
+      </div>
+      <div class="w3-col l3 m6">
+        <img src="img/media/electric.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="The electric spell">
+      </div>
+      <div class="w3-col l3 m6">
+        <img src="img/media/hardwork.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="Us working hard">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-large " style="margin-top:64px">
+
+      <div class="w3-col m6">
+
+        <h3 class="w3-center">Game Features</h3>
+        <video class="w3-col m12" controls>
+          <source src="video/GameFeature.mp4" type="video/mp4">
+          <source
+            src="https://media.githubusercontent.com/media/AGIGroup8/AGIGroup8.github.io/master/video/GameFeature.mp4"
+            type="video/mp4">
+
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="w3-col m6">
+        <h3 class="w3-center">Making of</h3>
+        <video class="w3-col m12" poster="video/thumbnail/makingof.png" controls>
+          <source src="video/makingof.mp4" type="video/mp4">
+          <source
+            src="https://media.githubusercontent.com/media/AGIGroup8/AGIGroup8.github.io/master/video/makingof.mp4"
+            type="video/mp4">
+
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class=" w3-center">
+        <h3 class="w3-center">Trailer</h3>
+        <video class="w3-col m12" controls>
+          <source src="video/trailer.mp4" type="video/mp4">
+          <source src="https://media.githubusercontent.com/media/AGIGroup8/AGIGroup8.github.io/master/video/trailer.mp4"
+            type="video/mp4">
+
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Creddit Sections-->
+  <div class="w3-container w3-black" style="padding:128px 16px" id="credit">
+    <h2 class="w3-center">Credits</h2>
+    <p class="w3-center w3-large">Credits to authors that created materials (e.g. images, sounds, prefabs) that are used
+      in this project.</p>
+
+    <div class="w3-row-padding w3-large background-img" style="padding:0px 80px;">
+      <p>
+        <strong>Fire texture used for Fire Graphics</strong> - website <em>80 level</em>, Author <em>Nadir
+          Khabibullin</em> <br>
+        <strong>Noise texture used for Fire Graphics</strong> - Author <em>Yoeri Luos Vleer</em> <br>
+        <strong>Fire textures used for first version of Fire Sword</strong> - Youtuber <em>Sirhaian'Arts</em><br>
+        <strong>Death text font</strong> - website <em>dafont</em>, Author <em>Jonathan Harris</em><br>
+        <strong>Tool used to edit sounds</strong> - software <em>audioalter</em>, Copyright link: <a
+          href="https://audioalter.com/licenses.txt">https://audioalter.com/licenses.txt</a> <br>
+        <strong>Sound Effects for fireball, explosion and background</strong> - website <em>Pixabay</em><br>
+        <strong>Sound Effects for Enemies and Player</strong> - website <em>mixkit</em><br>
+        <strong>Background music for The making of Documentary - "They Said I Can't"</strong> - website
+        <em>fesliyanstudios</em>, Author <em>David Fesliyan</em><br>
+        <strong>Steam® Audio SDK</strong> - website <em>steam-audio</em>, Copyright <em>Steam® Audio, Copyright 2017 –
+          2022, Valve Corp. All rights reserved</em><br>
+        <strong>Player Body Model in VR</strong> - website <em>Mixamo</em><br>
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption" class="w3-opacity w3-large"></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-64">
+    <a href="#home" class="w3-button" id="to-the-top-button" ><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+	<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+        class="w3-hover-text-green">w3.css</a></p>
+    <p>© 2022 AGI Group 8</p>
+  </footer>
+
+</body>
+
+</html>
