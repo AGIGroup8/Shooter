@@ -42,17 +42,17 @@
     #to-the-top-button {
       border-radius: 3%;
       background-color: rgb(45, 70, 135);
-	  
-	  position: fixed;
-	  right: 30px;
-	  bottom: 20px;
-	  z-index: 99;
-	  
+
+      position: fixed;
+      right: 30px;
+      bottom: 20px;
+      z-index: 99;
+
       /* #margin-top: 50px; */
       opacity: 80%;
     }
-	
-	#button {
+
+    #button {
       border-radius: 3%;
       background-color: rgb(61, 102, 130);
       margin-top: 50px;
@@ -155,11 +155,15 @@
         <h3 class="w3-center">What is Shooter: Unknown?</h3>
         <p>
           Shooter: Unknown is the result of a project in the advanced graphics and interaction course DH2513 at KTH.
-		  Spanning from late November 2022 to early January 2023, the project is centered around an action packed shooter game.
-		  The game is centered around an asymmetric cooperative experience in which one player, using a VR headset, attempts to
-		  clear a level of enemies in intense shootouts while the second player (or players) can aid the VR player by doing various gestures with
-		  their body in front of a gesture tracking camera. These gestures are then translated to various buffs or helpful effects
-		  bestowed upon the VR shooter player by a helpful drone following them around in the scene. 
+          Spanning from late November 2022 to early January 2023, the project is centered around an action packed
+          shooter game.
+          The game is centered around an asymmetric cooperative experience in which one player, using a VR headset,
+          attempts to
+          clear a level of enemies in intense shootouts while the second player (or players) can aid the VR player by
+          doing various gestures with
+          their body in front of a gesture tracking camera. These gestures are then translated to various buffs or
+          helpful effects
+          bestowed upon the VR shooter player by a helpful drone following them around in the scene.
         </p>
       </div>
       <!-- ADD an image?
@@ -179,21 +183,33 @@
 
         <h3 class="w3-center">Asymmetrical gameplay</h3>
         <p>
-          Shooter: Unknown features two highly distinct gameplay styles. One player interacts with the virtual level through VR where they are shooting 
-		  various enemies who are also shooting back at them. Interaction takes place through the VR headset itself, as well as through the controllers which 
-		  are used to shoot the akimbo pistols held by the player as well as teleporting around the level. The second player (or players) interact with the virtual 
-		  scene through gestures tracked by a camera and can view the scene through the eyes of a small drone following the VR player. Through this drone, the player 
-		  (players) in front of the camera can bestow various buffs upon the VR player and is also able to rotate around the VR player by doing various gestures with 
-		  their body. Leaning to the left, for example, will make the drone circle to the left around the player.
+          Shooter: Unknown features two highly distinct gameplay styles. One player interacts with the virtual level
+          through VR where they are shooting
+          various enemies who are also shooting back at them. Interaction takes place through the VR headset itself, as
+          well as through the controllers which
+          are used to shoot the akimbo pistols held by the player as well as teleporting around the level. The second
+          player (or players) interact with the virtual
+          scene through gestures tracked by a camera and can view the scene through the eyes of a small drone following
+          the VR player. Through this drone, the player
+          (players) in front of the camera can bestow various buffs upon the VR player and is also able to rotate around
+          the VR player by doing various gestures with
+          their body. Leaning to the left, for example, will make the drone circle to the left around the player.
         </p>
         <!-- ADD an image?
         <div class="w3-col m6">
           <img class="w3-image w3-round-large" src="img/media/sword.png" alt="Hard work infront of a computer">
         </div>
         -->
-		<h3 class="w3-center">Goals and Motivations</h3>
+        <h3 class="w3-center">Goals and Motivations</h3>
         <p>
-          When setting out on the second project, it is after we had completed a fantasy and magic themed game called light in the dark, with elements of magic and monsters and a medieval art style. We wanted to try and make a new game that was totally different and more closely matched to the modern world, which would serve as a medium for some of the higher quality and more immersive modeling and graphics. This is the goal that we all wanted to improve and challenge in the second project period. We want to create a realistic gameplay experience with high quality graphics and combine this with project 2 requirement: Involving viewers to freely and easily interact with the game and bring fun to them. We also intent to upgrade our ability and explore the new technology etc. motion capture and AR, making a way that virtual and real world can connect each other. 
+          When setting out on the second project, it is after we had completed a fantasy and magic themed game called
+          light in the dark, with elements of magic and monsters and a medieval art style. We wanted to try and make a
+          new game that was totally different and more closely matched to the modern world, which would serve as a
+          medium for some of the higher quality and more immersive modeling and graphics. This is the goal that we all
+          wanted to improve and challenge in the second project period. We want to create a realistic gameplay
+          experience with high quality graphics and combine this with project 2 requirement: Involving viewers to freely
+          and easily interact with the game and bring fun to them. We also intent to upgrade our ability and explore the
+          new technology etc. motion capture and AR, making a way that virtual and real world can connect each other.
 
         </p>
       </div>
@@ -202,23 +218,36 @@
 
         <h3 class="w3-center">Challenges and Obstacles</h3>
         <p>
-          During the project, the group also ran into a number of obstacles. Mainly these issues arose in relation to optimization, as the group often
-		  strived to achieve realistic-looking graphics, the performance of the game would sometimes take a hit. One example of this is the VR player view
-		  which we wanted to look as realistic as possible. However, that would require a lot of computing power which meant that we had to move the Audience
-		  view to a separate computer which necessitated us doing networking. 
-		  <br>
-		  Throughout the project, we also had a lot of issues with networking. A lot of it stemmed from using “Unity Netcode for GameObjects” as we had no prior
-		  knowledge of it. It also turned out that the scope of implementing networking was much larger than first anticipated and required more than anticipated, 
-		  which of course meant that other work had to be discarded to make room for more work on the networking. One of the largest reasons that the networking took 
-		  time was because the two systems for the VR player and the audience respectively were different, while the API we used favored that each client had the same 
-		  system. Because it was 2 different systems and because of other reasons, the game objects that represented the 2 perspectives were statically spawned in the 
-		  scene making it so that the “ownership” was the server rather than the respective machines that were supposed to control the perspectives.
-		  <br>
-		  One challenge we faced with the project was that we didn’t have any prior experience with gesture controlls. This meant that we had to acquire the knowledge as
-		  part of the development process. This led to some delay before we could start implementing the controls, as we needed to learn about the theory behind it. For the
-		  development, one challenge with the gesture controls was to ensure that it worked for people with different body shapes. If we tuned it for one person, it might not
-		  work for another with broader shoulders. Similarly, even if the controls worked for a given person’s skeleton, the person might not be detected by the camera because
-		  of the color of their clothes or similar reasons.
+          During the project, the group also ran into a number of obstacles. Mainly these issues arose in relation to
+          optimization, as the group often
+          strived to achieve realistic-looking graphics, the performance of the game would sometimes take a hit. One
+          example of this is the VR player view
+          which we wanted to look as realistic as possible. However, that would require a lot of computing power which
+          meant that we had to move the Audience
+          view to a separate computer which necessitated us doing networking.
+          <br>
+          Throughout the project, we also had a lot of issues with networking. A lot of it stemmed from using “Unity
+          Netcode for GameObjects” as we had no prior
+          knowledge of it. It also turned out that the scope of implementing networking was much larger than first
+          anticipated and required more than anticipated,
+          which of course meant that other work had to be discarded to make room for more work on the networking. One of
+          the largest reasons that the networking took
+          time was because the two systems for the VR player and the audience respectively were different, while the API
+          we used favored that each client had the same
+          system. Because it was 2 different systems and because of other reasons, the game objects that represented the
+          2 perspectives were statically spawned in the
+          scene making it so that the “ownership” was the server rather than the respective machines that were supposed
+          to control the perspectives.
+          <br>
+          One challenge we faced with the project was that we didn’t have any prior experience with gesture controlls.
+          This meant that we had to acquire the knowledge as
+          part of the development process. This led to some delay before we could start implementing the controls, as we
+          needed to learn about the theory behind it. For the
+          development, one challenge with the gesture controls was to ensure that it worked for people with different
+          body shapes. If we tuned it for one person, it might not
+          work for another with broader shoulders. Similarly, even if the controls worked for a given person’s skeleton,
+          the person might not be detected by the camera because
+          of the color of their clothes or similar reasons.
         </p>
       </div>
     </div>
@@ -229,27 +258,40 @@
       <div class="w3-col m6">
         <h3 class="w3-center">Tools and platforms</h3>
         <p>
-          Throughout the project, the centerpiece platform used for development was the Unity game engine, in which all the game
-		  logic, scripting, particle system creation, lighting and overall scenes were assembled. The choice of using Unity was 
-		  made on the basis of multiple members of the group having prior experience working with it, creating a solid foundation
-		  for moving directly unto starting work on the VR implementation and other more advanced topics. Other than Unity, Maya 
-		  were used for modeling the enemies and the arena, and the texturing was done in Adobe Substance 3D Painter. For these tools, 
-		  the motivation for using them was also made on the basis of previous experience of the group members. For the audio, SteamAudio 
-		  was used for rendering, as it seemed to give the best results when comparing it to other high fidelity audio options, and worked 
-		  nicely along the HTC Vive VR headset used (which already uses steamVr). We also used “Netcode for GameObjects” from Unity to 
-		  handle all our networking needs since it was inherently supported by Unity. We also believed it would be easier to use than 
-		  having to implement networking by ourselves like we had done in our previous project. For the gesture controls we used Python 
-		  in combination with the MediaPipe module and OpenCV.
+          Throughout the project, the centerpiece platform used for development was the Unity game engine, in which all
+          the game
+          logic, scripting, particle system creation, lighting and overall scenes were assembled. The choice of using
+          Unity was
+          made on the basis of multiple members of the group having prior experience working with it, creating a solid
+          foundation
+          for moving directly unto starting work on the VR implementation and other more advanced topics. Other than
+          Unity, Maya
+          were used for modeling the enemies and the arena, and the texturing was done in Adobe Substance 3D Painter.
+          For these tools,
+          the motivation for using them was also made on the basis of previous experience of the group members. For the
+          audio, SteamAudio
+          was used for rendering, as it seemed to give the best results when comparing it to other high fidelity audio
+          options, and worked
+          nicely along the HTC Vive VR headset used (which already uses steamVr). We also used “Netcode for GameObjects”
+          from Unity to
+          handle all our networking needs since it was inherently supported by Unity. We also believed it would be
+          easier to use than
+          having to implement networking by ourselves like we had done in our previous project. For the gesture controls
+          we used Python
+          in combination with the MediaPipe module and OpenCV.
         </p>
       </div>
       <div class="w3-col m6">
         <h3 class="w3-center">Lesson Learned</h3>
         <p>
-          Do not have a higher expectation that the times allow, it’s good to have sub-plans of what you can do if you do not have enough time.
+          Do not have a higher expectation that the times allow, it’s good to have sub-plans of what you can do if you
+          do not have enough time.
           <br>
-          Networking takes a lot of time, especially if you have never used the particular library before. The time it takes to implement networking also increases exponentially.
+          Networking takes a lot of time, especially if you have never used the particular library before. The time it
+          takes to implement networking also increases exponentially.
           <br>
-          Having a VR project makes the VR capable computer a bottleneck. Try to avoid filling that bottleneck with work unrelated to VR.
+          Having a VR project makes the VR capable computer a bottleneck. Try to avoid filling that bottleneck with work
+          unrelated to VR.
         </p>
       </div>
     </div>
@@ -257,11 +299,12 @@
       <div class="w3-col m6">
         <h3 class="w3-center">Related Work</h3>
         <p>
-          Oudah, M., Al-Naji, A., and Chahl, J. (2020). Hand Gesture Recognition Based on Computer Vision: A Review of Techniques.
+          Oudah, M., Al-Naji, A., and Chahl, J. (2020). Hand Gesture Recognition Based on Computer Vision: A Review of
+          Techniques.
           Journal of Imaging, 6(8):73. <br>
           Gumbau, J., Chover, M. and Sbert, M. (2018). Screen Space Soft Shadows. In book: GPU Pro 360.
-		  pp.60-74. <br>
-		  Valve. (2020). Half-Life: Alyx. [GAME]
+          pp.60-74. <br>
+          Valve. (2020). Half-Life: Alyx. [GAME]
         </p>
       </div>
 
@@ -292,10 +335,10 @@
             <h3>Alexander Danielsson</h3>
             <p class="w3-opacity">Enemy Behavior and Sound Director</p>
             <a id="AEmail" href=""></a>
-            <p> Implemented the game logic for the enemies, as well as their behavior. 
-			Set up the project to use 3D sounds and spatialization using the Steam Audio 
-			unity plugin, and configured the plugin to create a smooth and high fidelity 
-			auditory experience.</p>
+            <p> Implemented the game logic for the enemies, as well as their behavior.
+              Set up the project to use 3D sounds and spatialization using the Steam Audio
+              unity plugin, and configured the plugin to create a smooth and high fidelity
+              auditory experience.</p>
           </div>
         </div>
       </div>
@@ -306,10 +349,10 @@
             <h3>Elisabeth Chen</h3>
             <p class="w3-opacity">Gesture Detection Responsible</p>
             <a id="EEmail" href=""></a>
-            <p>Developed the gesture detection for the audience by using python 
-              and the modules Mediapipe and OpenCV. Connected the Detection Script (Python) 
+            <p>Developed the gesture detection for the audience by using python
+              and the modules Mediapipe and OpenCV. Connected the Detection Script (Python)
               to the Game Script (Unity/C++) by using server-cilent connection via Ethernet.
-              Did also implemented the UI for health, death, and each action shown on 
+              Did also implemented the UI for health, death, and each action shown on
               the Audience View and VR Player View.</p>
           </div>
         </div>
@@ -322,15 +365,18 @@
             <p class="w3-opacity">Audience Gameplay Director & Networking Responsible</p>
             <a id="JEmail" href=""></a>
             <p>
-              Responsible for and implemented the Audience gameplay. Tweaking and iteratively improving the audience experience as the game developed.
-              Also implemented all gameplay interactions between the Audience and VR player making it so the two worlds could connect.
-              Implemented Networking in the project so the two different perspectives could be sepperate and we could use more of the computer for the VR player.
+              Responsible for and implemented the Audience gameplay. Tweaking and iteratively improving the audience
+              experience as the game developed.
+              Also implemented all gameplay interactions between the Audience and VR player making it so the two worlds
+              could connect.
+              Implemented Networking in the project so the two different perspectives could be sepperate and we could
+              use more of the computer for the VR player.
             </p>
           </div>
         </div>
       </div>
     </div>
-	<div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-row-padding" style="margin-top:64px">
       <div class="w3-col l4 m6 w3-margin-bottom">
         <div class="w3-card">
           <img src="img/profile/m.png" alt="Marcus Holmberg" style="width:100%">
@@ -339,7 +385,10 @@
             <p class="w3-opacity">Particle Systems Manager
             </p>
             <a id="MEmail" href=""></a>
-            <p> Mainly responsible for the particles used in the game, such as the muzzle flash, as well as the corresponding textures. Also did the player teleportation and helped with implementing restart functionality for the networked scene. Created the models used for the enemy weapons (note however that they were completed prior to the start of this project). </p>
+            <p> Mainly responsible for the particles used in the game, such as the muzzle flash, as well as the
+              corresponding textures. Also did the player teleportation and helped with implementing restart
+              functionality for the networked scene. Created the models used for the enemy weapons (note however that
+              they were completed prior to the start of this project). </p>
           </div>
         </div>
       </div>
@@ -351,7 +400,11 @@
             <p class="w3-opacity">Character Responsible and Drone Designer </p>
             <a id="REmail" href=""></a>
             <p>
-              Mainly responsible for character rigging, both player and enemy. VR player body tracking and binding for the main character model, enemy death effects and other movement animations. Bullet shooting effects, including blood spatter effects for hitting enemies and bullet holes in walls. UI for audience, the interface was designed as a monitor style and a panel with interactive instructions was created. The viewer's avatar, a drone was designed and modelled with animations and interaction effects.
+              Mainly responsible for character rigging, both player and enemy. VR player body tracking and binding for
+              the main character model, enemy death effects and other movement animations. Bullet shooting effects,
+              including blood spatter effects for hitting enemies and bullet holes in walls. UI for audience, the
+              interface was designed as a monitor style and a panel with interactive instructions was created. The
+              viewer's avatar, a drone was designed and modelled with animations and interaction effects.
             </p>
           </div>
         </div>
@@ -415,7 +468,7 @@
           alt="Working hard late at night.">
       </div>
     </div>
-    
+
 
     <div class="w3-row-padding w3-large " style="margin-top:64px">
 
@@ -424,15 +477,14 @@
         <h3 class="w3-center">Trailer</h3>
         <video class="w3-col m12" controls>
           <source src="video/GameFeature.mp4" type="video/mp4">
-          <source
-            src="https://media.githubusercontent.com/media/AGIGroup8/Shooter/main/video/DemoReelVR.mp4"
+          <source src="https://media.githubusercontent.com/media/AGIGroup8/Shooter/main/video/DemoReelVR.mp4"
             type="video/mp4">
 
           Your browser does not support the video tag.
         </video>
       </div>
-	  
-	  <div class=" w3-col m6">
+
+      <div class=" w3-col m6">
         <h3 class="w3-center">Audience DemoReel</h3>
         <video class="w3-col m12" controls>
           <source src="video/trailer.mp4" type="video/mp4">
@@ -447,8 +499,7 @@
         <h3 class="w3-center">Making of</h3>
         <video class="w3-col m12" controls>
           <source src="video/makingof.mp4" type="video/mp4">
-          <source
-            src="https://media.githubusercontent.com/media/AGIGroup8/Shooter/main/video/makingof.mp4"
+          <source src="https://media.githubusercontent.com/media/AGIGroup8/Shooter/main/video/makingof.mp4"
             type="video/mp4">
 
           Your browser does not support the video tag.
@@ -470,10 +521,14 @@
         <strong>Tool used to edit sounds</strong> - software <em>audioalter</em>, Copyright link: <a
           href="https://audioalter.com/licenses.txt">https://audioalter.com/licenses.txt</a> <br>
         <strong>Sound Effects</strong> - website <em>Pixabay</em><br>
-		<strong>Background music for Trailer - "Cinematic battle percussion hero action boom drums music"</strong> - website
-			<em>Pixabay</em>, Author <em>REDproductions</em><br>
-		<strong>Background music for Audience DemoReel - "Relaxed vlog"</strong> - website
-			<em>Pixabay</em>, Author <em>Ashot Danielyan</em><br>
+        <strong>Background music for Trailer - "Cinematic battle percussion hero action boom drums music"</strong> -
+        website
+        <em>Pixabay</em>, Author <em>REDproductions</em><br>
+        <strong>Background music for Audience DemoReel - "Relaxed vlog"</strong> - website
+        <em>Pixabay</em>, Author <em>Ashot Danielyan</em><br>
+        <strong>Background music for Making Of Video: First Part - "emotional-inspiring-epic-trailer-11258"</strong> - website
+        <em>Pixabay</em>, Author <em>Coma-Media</em><br>
+        <strong>Background music for Making Of Video: Second Part - "This is Disco!"</strong> - From <em>Clipchamp Free Music</em><br>
         <strong>Steam® Audio SDK</strong> - website <em>steam-audio</em>, Copyright <em>Steam® Audio, Copyright 2017 –
           2022, Valve Corp. All rights reserved</em><br>
         <strong>Player Body Model in VR</strong> - website <em>Mixamo</em><br>
@@ -492,8 +547,9 @@
 
   <!-- Footer -->
   <footer class="w3-center w3-black w3-padding-64">
-    <a href="#home" class="w3-button" id="to-the-top-button" ><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-	<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+    <a href="#home" class="w3-button" id="to-the-top-button"><i class="fa fa-arrow-up w3-margin-right"></i>To the
+      top</a>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
         class="w3-hover-text-green">w3.css</a></p>
     <p>© 2023 AGI Group 8</p>
   </footer>
