@@ -154,19 +154,12 @@
       <div class="w3-col m6">
         <h3 class="w3-center">What is Shooter?</h3>
         <p>
-          Shooter is an advanced graphics and interaction project for the course DH2413 at KTH during the
-          autumn of 2022. At its core, the game is a competitive survival experience in which one player is trying to
-          stay alive for as long as possible while the other player tries to kill them as fast as possible. The gameplay
-          experience of the two players is highly asymmetrical, as the player trying to stay alive is looking and
-          interacting with a scene through a virtual reality (VR) headset while the second player is directly
-          influencing and placing enemies into that scene by using a monitor and mouse. The scene used for the VR view
-          of the game is set in a dark underground arena and features highly detailed textures and modeling for the
-          surrounding environment. There are three different types of enemies, each of which has been modeled, textured
-          and scripted by the group. Additionally, the VR scene features advanced particle systems for fire and
-          electricity. The fire effects are used for a flaming sword used by the player as well as a chargeable fireball
-          while the electricity particles are used to emulate a chaotic electrical ray. As the VR player is fighting for
-          their life, the second player interacts with the scene through a custom networking implementation, allowing
-          the actions of the second player to directly impact the VR experience.
+          Shooter: Unknown is the result of a project in the advanced graphics and interaction course DH2513 at KTH.
+		  Spanning from late November 2022 to early January 2023, the project is centered around an action packed shooter game.
+		  The game is centered around an asymmetric cooperative experience in which one player, using a VR headset, attempts to
+		  clear a level of enemies in intense shootouts while the second player (or players) can aid the VR player by doing various gestures with
+		  their body in front of a gesture tracking camera. These gestures are then translated to various buffs or helpful effects
+		  bestowed upon the VR shooter player by a helpful drone following them around in the scene. 
         </p>
       </div>
       <!-- ADD an image?
@@ -181,65 +174,49 @@
 
         <h3 class="w3-center">Asymmetrical gameplay</h3>
         <p>
-          Featuring two very distinct gameplay experiences, two players interact and compete against each other, one
-          through an action packed hectic perspective with a VR headset and the other through a calculating and
-          strategic perspective, interacting through a monitor and mouse.
+          Shooter: Unknown features two highly distinct gameplay styles. One player interacts with the virtual level through VR where they are shooting 
+		  various enemies who are also shooting back at them. Interaction takes place through the VR headset itself, as well as through the controllers which 
+		  are used to shoot the akimbo pistols held by the player as well as teleporting around the level. The second player (or players) interact with the virtual 
+		  scene through gestures tracked by a camera and can view the scene through the eyes of a small drone following the VR player. Through this drone, the player 
+		  (players) in front of the camera can bestow various buffs upon the VR player and is also able to rotate around the VR player by doing various gestures with 
+		  their body. Leaning to the left, for example, will make the drone circle to the left around the player.
         </p>
         <!-- ADD an image?
         <div class="w3-col m6">
           <img class="w3-image w3-round-large" src="img/media/sword.png" alt="Hard work infront of a computer">
         </div>
         -->
+		<h3 class="w3-center">Goals and Motivations</h3>
         <p>
-          When setting out on the project, one of the main motivations of the group was to experiment with high fidelity
-          lightning. This also is the reason for the setting for the game being a dark mine, as the darkness emphasizes
-          and truly brings out the light and particle effects in the scene.
-        </p>
-        <h3 class="w3-center padding">Challenges</h3>
-        <p>
-          Working on the project has presented several challenges and challenges to the group. At the start of the
-          project, none of the group members had any experience working with VR, high fidelity particle systems and
-          advanced audio. In order to overcome these challenges, the group split up the roles to the members early, and
-          made sure to have each member be responsible for a set of distinct features/areas using a continually updated
-          trello board. For further communication, the group used discord and lastly, google drive was used for file
-          sharing and documentation.
+          When setting out on the project, one of the main motivations of the group was to experiment with high fidelity graphics.
+		  This also is the reason for the setting for the game in a bright setting, as that would allow the player to really experience the graphics.
+		  The other main motivation was to implement so that the Audience could interact with the VR player through gestures and that their movement
+		  and positioning in the real world affects the view of the audience in the game.
+
         </p>
       </div>
 
       <div class="w3-col m6">
 
-        <h3 class="w3-center">Obstacles</h3>
+        <h3 class="w3-center">Challenges and Obstacles</h3>
         <p>
-          During the project, the group also ran into a number of obstacles. Mainly these issues arose in relation to
-          optimization, as the group often strived to achieve realistic-looking graphics, the performance of the game
-          would sometimes take a hit. One example of an area in which we encountered this was in relation to lighting in
-          the Unity Universal Render Pipeline, where the graphics renderer would automatically stop rendering light
-          sources when the number of light sources in the scene became too high (We later solved this by switching to
-          the ultimate quality preset in the URP and increasing the max limit).
-          <br><br>
-          Throughout the project, we also had occasional issues with networking.
-          The asynchronous nature of the two clients made it hard to use already existing network solutions such as
-          Unity Netcode for GameObjects. Because of this we designed and implemented our own network protocol for the
-          game,
-          which we had to revise multiple times to reduce the amount of sent data as the throughput would be too high,
-          overwhelming both clients and making them drop packages. The inherent asynchronous nature of networking also
-          caused minor issues, as both clients had to be synched to both each other, but also their respective
-          networking
-          thread, causing bugs stemming from race conditions between the game logic thread and networking thread.
-          Towards the end of the project, the network issues were largely resolved, but we still had occasional
-          connection
-          issues, and both users needed to restart the game to restart. The electrical arc ray also held its share of
-          issues.
-          Mainly these issues related to making it so the electric arc would behave realistically, chain between enemies
-          as
-          well as spawning smaller “child arcs” from the main arcs, without causing too much of a performance hit.
-          <br><br>
-          Another, more wide range obstacle which remained in the game, is that it isn't currently playable in single
-          player form (not counting just gawking at the graphics in the VR headset). At one point in the project, the
-          group had plans on making the enemies spawn from set monster spawners which would generate monsters over time,
-          as opposed to having the non-vr player actively summon them. By implementing this, the idea would be that the
-          game could potentially be played by either one or two players but we never had enough time to implement this,
-          as we prioritized fixing the features we already had.
+          During the project, the group also ran into a number of obstacles. Mainly these issues arose in relation to optimization, as the group often
+		  strived to achieve realistic-looking graphics, the performance of the game would sometimes take a hit. One example of this is the VR player view
+		  which we wanted to look as realistic as possible. However, that would require a lot of computing power which meant that we had to move the Audience
+		  view to a separate computer which necessitated us doing networking. 
+		  <br>
+		  Throughout the project, we also had a lot of issues with networking. A lot of it stemmed from using “Unity Netcode for GameObjects” as we had no prior
+		  knowledge of it. It also turned out that the scope of implementing networking was much larger than first anticipated and required more than anticipated, 
+		  which of course meant that other work had to be discarded to make room for more work on the networking. One of the largest reasons that the networking took 
+		  time was because the two systems for the VR player and the audience respectively were different, while the API we used favored that each client had the same 
+		  system. Because it was 2 different systems and because of other reasons, the game objects that represented the 2 perspectives were statically spawned in the 
+		  scene making it so that the “ownership” was the server rather than the respective machines that were supposed to control the perspectives.
+		  <br>
+		  One challenge we faced with the project was that we didn’t have any prior experience with gesture controlls. This meant that we had to acquire the knowledge as
+		  part of the development process. This led to some delay before we could start implementing the controls, as we needed to learn about the theory behind it. For the
+		  development, one challenge with the gesture controls was to ensure that it worked for people with different body shapes. If we tuned it for one person, it might not
+		  work for another with broader shoulders. Similarly, even if the controls worked for a given person’s skeleton, the person might not be detected by the camera because
+		  of the color of their clothes or similar reasons.
         </p>
       </div>
     </div>
@@ -250,34 +227,27 @@
       <div class="w3-col m6">
         <h3 class="w3-center">Tools and platforms</h3>
         <p>
-          Throughout the project, the centerpiece platform used for development was the Unity game engine, in which all
-          the game logic, scripting, particle system creation, lighting and overall scenes were assembled. The choice of
-          using Unity was made on the basis of multiple members of the group having prior experience working with it,
-          creating a solid foundation for moving directly unto starting work on the VR implementation and other more
-          advanced topics. Other than Unity, Maya, Zbrush and Blender were used for modeling the enemies and the arena,
-          and the texturing was done in Adobe Substance 3D Painter and. For these tools, the motivation for using them
-          was also made on the basis of previous experience of the group members. For the audio, SteamAudio was used for
-          rendering, as it seemed to give the best results when comparing it to other high fidelity audio options, and
-          worked nicely along the HTC Vive VR headset used (which already uses steamVr).
+          Throughout the project, the centerpiece platform used for development was the Unity game engine, in which all the game
+		  logic, scripting, particle system creation, lighting and overall scenes were assembled. The choice of using Unity was 
+		  made on the basis of multiple members of the group having prior experience working with it, creating a solid foundation
+		  for moving directly unto starting work on the VR implementation and other more advanced topics. Other than Unity, Maya 
+		  were used for modeling the enemies and the arena, and the texturing was done in Adobe Substance 3D Painter. For these tools, 
+		  the motivation for using them was also made on the basis of previous experience of the group members. For the audio, SteamAudio 
+		  was used for rendering, as it seemed to give the best results when comparing it to other high fidelity audio options, and worked 
+		  nicely along the HTC Vive VR headset used (which already uses steamVr). We also used “Netcode for GameObjects” from Unity to 
+		  handle all our networking needs since it was inherently supported by Unity. We also believed it would be easier to use than 
+		  having to implement networking by ourselves like we had done in our previous project. For the gesture controls we used Python 
+		  in combination with the MediaPipe module and OpenCV.
         </p>
       </div>
       <div class="w3-col m6">
         <h3 class="w3-center">Lesson Learned</h3>
         <p>
-          Combining different works will take time. You will also meet many bugs in this process. Thus it's good to have
-          enough time for merging.
+          Do not have a higher expectation that the times allow, it’s good to have sub-plans of what you can do if you do not have enough time.
           <br>
-          It's good to have a nice structure in the project before all files start to get very messy.
+          Networking takes a lot of time, especially if you have never used the particular library before. The time it takes to implement networking also increases exponentially.
           <br>
-          It's good to think of the performance when you are creating your objects and not creating more details than
-          necessary.
-          <br>
-          The view with the VR headset is really different from the desktop view. Thus when you are doing graphic
-          programming on VR it's important to also test it on the VR headset.
-          <br>
-          Audio is additive, and so great care must be taken to adjust for multiple simultaneous sound sources to create
-          a
-          meaningful experience.
+          Having a VR project makes the VR capable computer a bottleneck. Try to avoid filling that bottleneck with work unrelated to VR.
         </p>
       </div>
     </div>
@@ -285,12 +255,11 @@
       <div class="w3-col m6">
         <h3 class="w3-center">Related Work</h3>
         <p>
-          Gawron, M., & Boryczka, U. (2018). Heterogeneous fog generated with the effect of light scattering and blur.
-          Journal of Applied Computer Science, 26(2), 31-43. <br>
-          Cao, C., Ren, Z., Schissler, C., Manocha, D., & Zhou, K. (2016). Interactive sound propagation with
-          bidirectional path tracing. ACM Transactions on Graphics (TOG), 35(6), 1-11. <br>
-          Lee, D. F., Huang, X. W., Chen, Y. C., Hsu, Y. X., Chang, S. Y., & Han, P. H. (2020). FoodBender: Activating
-          Utensil for Playing in the Immersive Game with Attachable Haptic. In SIGGRAPH Asia 2020 XR (pp. 1-2).
+          Oudah, M., Al-Naji, A., and Chahl, J. (2020). Hand Gesture Recognition Based on Computer Vision: A Review of Techniques.
+          Journal of Imaging, 6(8):73. <br>
+          Gumbau, J., Chover, M. and Sbert, M. (2018). Screen Space Soft Shadows. In book: GPU Pro 360.
+		  pp.60-74. <br>
+		  Valve. (2020). Half-Life: Alyx. [GAME]
         </p>
       </div>
 
@@ -328,11 +297,9 @@
           <img src="img/profile/e.png" alt="Elisabeth Chen" style="width:100%">
           <div class="w3-container">
             <h3>Elisabeth Chen</h3>
-            <p class="w3-opacity">Fire Implementation Specialist</p>
+            <p class="w3-opacity"></p>
             <a id="EEmail" href=""></a>
-            <p>Implemented the fire graphics (used for e.g. fire sword, fireball, explosions, etc. ) and created the
-              fire sword. Also implemented the UI for the death scene and added some 3D sounds e.g. for fireball,
-              explosion and background sound.</p>
+            <p></p>
           </div>
         </div>
       </div>
@@ -358,15 +325,9 @@
           <img src="img/profile/m.png" alt="Marcus Holmberg" style="width:100%">
           <div class="w3-container">
             <h3>Marcus Holmberg</h3>
-            <p class="w3-opacity">Spell Director (and forced Jacob to Web Design)</p>
+            <p class="w3-opacity"></p>
             <a id="MEmail" href=""></a>
-            <p> Responsible for the VR interaction input from the controllers used for the spells as well as the spell
-              logic
-              (scripting for each spell) and the underlying player mana system. Created the particle effects and
-              graphics for
-              the lightning spell and some smaller script-based parts of the fireball graphics, such as the size
-              depending on
-              its level of charge. Also did much of the underlying game logic such as pausing & restarting the game.</p>
+            <p> </p>
           </div>
         </div>
       </div>
@@ -375,11 +336,9 @@
           <img src="img/profile/r.png" alt="Ryan Ren" style="width:100%">
           <div class="w3-container">
             <h3>Ryan Ren</h3>
-            <p class="w3-opacity">Enemy Designer & Tablet UI Designer & Model Rigging Director</p>
+            <p class="w3-opacity"></p>
             <a id="REmail" href=""></a>
-            <p>Responsible for all enemy designs which include concepts、 sketches 、modeling and animation. Joint the VR
-              player with the virtual body in-game and develop the rigging animation function. Design the tablet
-              gameplay mechanics and User interface for the summoner player.</p>
+            <p></p>
           </div>
         </div>
       </div>
@@ -388,12 +347,9 @@
           <img src="img/profile/s.png" alt="Simon Blom" style="width:100%">
           <div class="w3-container">
             <h3>Simon Blom</h3>
-            <p class="w3-opacity">Artist & Level Director & Rendering Director</p>
+            <p class="w3-opacity"></p>
             <a id="SEmail" href=""></a>
-            <p>Designed and created the game level together with the game level objects. He used Zbrush to sculpt
-              rock surfaces, Maya to model different objects and Substance Painter to create high quality
-              textures. Also took the overall graphics to the next level by adding anti-aliasing and real-time
-              shadows for the rendering.</p>
+            <p></p>
           </div>
         </div>
       </div>
